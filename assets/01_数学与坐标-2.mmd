@@ -1,0 +1,10 @@
+flowchart LR
+ X[数据 x] --> E[编码器 q_phi]
+ E --> M[均值 mu / 对数方差]
+ N[标准高斯 epsilon] --> S[重参数化 z]
+ M --> S
+ S --> D[解码器 p_theta]
+ D --> R[重建负对数似然]
+ M --> K[与先验的 KL]
+ R --> L[相加得到负 ELBO]
+ K --> L

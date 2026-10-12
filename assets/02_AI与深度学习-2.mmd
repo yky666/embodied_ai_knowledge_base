@@ -1,0 +1,6 @@
+flowchart LR
+ I[H x W x C 图像] --> P[切成 P x P patches]
+ P --> E[展平与线性嵌入]
+ E --> A[加位置 / class token]
+ A --> T[Transformer encoder 堆叠]
+ T --> O[分类 / 密集任务头]

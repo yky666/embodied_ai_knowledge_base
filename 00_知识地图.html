@@ -1,0 +1,84 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>00 · 知识地图与学习路线（导读） · 基础知识</title><link rel="stylesheet" href="assets/katex.min.css"><link rel="stylesheet" href="assets/atlas.css"></head><body><div class="layout"><aside class="sidebar"><div class="brand"><small>RESEARCH FOUNDATIONS</small>AI · Robotics<br>Spatial Intelligence</div><p>公式 · 几何 · 闭环行动</p><input class="search" id="search" aria-label="搜索模块" placeholder="搜索模块…"><nav class="nav"><a href="index.html">⌂ 知识库首页</a><a data-label="00 · 知识地图与学习路线（导读）" class="active" href="00_知识地图.html">00 · 知识地图与学习路线（导读）</a><a data-label="01 · 数学、概率与坐标变换" class="" href="01_数学与坐标.html">01 · 数学、概率与坐标变换</a><a data-label="02 · 深度学习与 transformer、扩散、流匹配" class="" href="02_AI与深度学习.html">02 · 深度学习与 Transformer、扩散、流匹配</a><a data-label="03 · 机器人运动学、动力学与控制" class="" href="03_机器人学.html">03 · 机器人运动学、动力学与控制</a><a data-label="04 · 视觉、slam 与三维表示" class="" href="04_视觉与三维表示.html">04 · 视觉、SLAM 与三维表示</a><a data-label="05 · 空间智能：几何、关系、信念与世界模型" class="" href="05_空间智能.html">05 · 空间智能：几何、关系、信念与世界模型</a><a data-label="06 · 具身学习、diffusion policy 与 vla" class="" href="06_具身学习与VLA.html">06 · 具身学习、Diffusion Policy 与 VLA</a><a data-label="07 · gpu 显存、训练资源与部署预算" class="" href="07_GPU与训练资源.html">07 · GPU 显存、训练资源与部署预算</a><a data-label="08 · 术语、评测与实验复现" class="" href="08_术语表与评测.html">08 · 术语、评测与实验复现</a><a data-label="09 · 架构图与算法索引" class="" href="09_架构图与流程图.html">09 · 架构图与算法索引</a><a data-label="参考资料与来源追踪" class="" href="参考资料.html">参考资料与来源追踪</a><a data-label="如何补充知识库" class="" href="CONTRIBUTING.html">如何补充知识库</a><a data-label="embodied ai knowledge base" class="" href="README.html">Embodied AI Knowledge Base</a><a data-label="第三方资源" class="" href="THIRD_PARTY_NOTICES.html">第三方资源</a><a href="10_交互实验.html">10 · 交互式直觉实验</a></nav></aside><main class="main"><div class="toolbar"><span id="reading-mode">详细推导</span><button id="detail-mode">展开全部推导</button><button id="brief-mode">精简模式</button><button id="print">打印 / PDF</button></div><article class="article"><h1>00 · 知识地图与学习路线（导读）</h1><div class="meta">基础讲义 · 2026-10-12 · 本地公式与矢量图 · 点击图示放大</div><nav class="toc" aria-label="本页目录"><b>CONTENTS · 本页目录</b><a href="#1-从一个机器人任务看完整知识链">1. 从一个机器人任务看完整知识链</a><a href="#2-模块之间的依赖图">2. 模块之间的依赖图</a><a href="#3-按研究目标选学习模块">3. 按研究目标选学习模块</a><a href="#4-学习成果应该是什么">4. 学习成果应该是什么</a><a href="#5-符号与知识边界">5. 符号与知识边界</a></nav><h2 id="1-从一个机器人任务看完整知识链">1. 从一个机器人任务看完整知识链</h2>
+<p>任务：“把桌上的红色杯子放入水槽。”</p>
+<ol>
+<li>语言理解把命令拆成目标对象“红杯”和目标区域“水槽”。</li>
+<li>视觉感知检测杯子/水槽，深度估计它们的位置。</li>
+<li>坐标几何把相机坐标下的物体位姿变换到机器人基座坐标。</li>
+<li>空间推理验证杯子是否在桌面、目标槽是否可达、路径有无障碍。</li>
+<li>操作规划生成接近、抓取、抬起、移动、放置动作。</li>
+<li>控制器将轨迹转成关节命令，传感器反馈修正实际误差。</li>
+<li>新观测确认是否抓稳和放置成功；失败时重新定位和规划。</li>
+</ol>
+<p>这条链说明 AI、机器人学和空间智能的分工：语言模型提供语义泛化，几何模块提供可测量空间，规划控制提供可执行动作，闭环传感器避免把开环预测当事实。</p>
+<h2 id="2-模块之间的依赖图">2. 模块之间的依赖图</h2>
+<figure class="diagram"><img src="assets/00_知识地图-1.svg" alt="00 · 知识地图与学习路线（导读） 图 1"><figcaption>图 00.1 · 箭头表示信息 / 计算流程；具体输入、变量与假设见本节说明。</figcaption><details class="diagram-source"><summary>查看 Mermaid 图源码</summary><pre>flowchart TD
+ M[数学 / 概率 / 优化 / 坐标] --&gt; A[学习模型 / Transformer / 生成]
+ M --&gt; R[机器人运动学 / 动力学 / 控制]
+ A --&gt; V[相机 / 深度 / 三维感知 / SLAM]
+ V --&gt; S[空间表征 / 场景图 / 信念]
+ S --&gt; P[任务规划 / 路径 / 动作块]
+ A --&gt; P
+ R --&gt; C[反馈控制 / 执行]
+ P --&gt; C
+ C --&gt; E[环境 / 新观测]
+ E --&gt; V
+ E --&gt; T[评测 / 复现 / 失败分析]</pre></details></figure>
+<p>若从机器学习切入，可优先学 01、02、04、06；若从机械臂实验切入，优先学 01、03、04、06；若研究空间推理，优先学 01、04、05、08。</p>
+<h2 id="3-按研究目标选学习模块">3. 按研究目标选学习模块</h2>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>研究问题</th>
+<th>需要先掌握</th>
+<th>典型输入→输出</th>
+<th>常见基线</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>空间问答</td>
+<td>相机几何、对象检测、关系定义</td>
+<td>图像/场景→距离或关系</td>
+<td>几何计算、VLM</td>
+</tr>
+<tr>
+<td>移动导航</td>
+<td>SLAM、占据图、A*/局部规划</td>
+<td>激光/相机→速度命令</td>
+<td>A*、DWA/MPC</td>
+</tr>
+<tr>
+<td>桌面抓取</td>
+<td>深度、手眼标定、IK、碰撞</td>
+<td>RGB-D→抓取轨迹</td>
+<td>几何抓取、行为克隆</td>
+</tr>
+<tr>
+<td>动作生成</td>
+<td>概率建模、BC、扩散/流</td>
+<td>观测+演示→动作块</td>
+<td>高斯BC、Diffusion Policy</td>
+</tr>
+<tr>
+<td>世界模型</td>
+<td>状态表示、时序预测、MPC</td>
+<td>历史状态/动作→未来状态</td>
+<td>解析动力学、单步预测</td>
+</tr>
+<tr>
+<td>训练部署</td>
+<td>显存、吞吐、延迟 profiling</td>
+<td>模型/任务→可运行系统</td>
+<td>精度/并行/缓存优化</td>
+</tr>
+</tbody></table></div>
+<h2 id="4-学习成果应该是什么">4. 学习成果应该是什么</h2>
+<ul>
+<li>能写明符号、坐标系、单位和维数，而不是只背公式。</li>
+<li>能从概率模型/几何关系推到训练或估计目标，知道每一步用了什么假设。</li>
+<li>能画出数据路径、训练路径和在线执行路径。</li>
+<li>能用一个小数值例子验证公式，再用真实数据检查误差和异常。</li>
+<li>能区分“模型看起来合理”和“机器人执行安全/成功”。</li>
+</ul>
+<h2 id="5-符号与知识边界">5. 符号与知识边界</h2>
+<p>同一字母可能跨领域复用：β 在扩散中常表示噪声日程，在损失中又可作正则系数；λ 可作像素投影尺度也可作优化权重。阅读时看章节定义、维数和单位。涉及具体 GPU、模型排名、基准分数、商业产品状态时，需要查当前官方规格/论文版本。</p>
+<nav class="chapter-neighbors"><span></span><a href="01_数学与坐标.html">01 · 数学、概率与坐标变换 →</a></nav><div class="foot">来源与核验状态见 <a href="参考资料.html">参考资料</a> · <a href="00_知识地图.md">Markdown 源稿</a></div></article></main></div><dialog id="zoom" class="zoom"><button>关闭放大图</button><img alt="放大图"></dialog><script src="assets/atlas.js"></script></body></html>

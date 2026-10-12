@@ -1,0 +1,4 @@
+flowchart LR
+ C[相机点 p_C] -->|末端到相机外参 T_EC| E[末端系 p_E]
+ E -->|机器人正运动学 T_BE| B[基座系 p_B]
+ B -->|基座定位 T_WB| W[世界系 p_W]

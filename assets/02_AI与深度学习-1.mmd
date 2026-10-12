@@ -1,0 +1,11 @@
+flowchart LR
+ X[输入 X] --> Q[Q 投影]
+ X --> K[K 投影]
+ X --> V[V 投影]
+ Q --> S[Q 乘 K 转置 / sqrt dk]
+ K --> S
+ M[因果或 padding mask] --> S
+ S --> A[沿 key 轴 softmax]
+ A --> O[A 乘 V]
+ V --> O
+ O --> H[各头拼接 / 输出投影]

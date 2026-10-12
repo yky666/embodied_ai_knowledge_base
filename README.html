@@ -1,0 +1,125 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Embodied AI Knowledge Base · 基础知识</title><link rel="stylesheet" href="assets/katex.min.css"><link rel="stylesheet" href="assets/atlas.css"></head><body><div class="layout"><aside class="sidebar"><div class="brand"><small>RESEARCH FOUNDATIONS</small>AI · Robotics<br>Spatial Intelligence</div><p>公式 · 几何 · 闭环行动</p><input class="search" id="search" aria-label="搜索模块" placeholder="搜索模块…"><nav class="nav"><a href="index.html">⌂ 知识库首页</a><a data-label="00 · 知识地图与学习路线（导读）" class="" href="00_知识地图.html">00 · 知识地图与学习路线（导读）</a><a data-label="01 · 数学、概率与坐标变换" class="" href="01_数学与坐标.html">01 · 数学、概率与坐标变换</a><a data-label="02 · 深度学习与 transformer、扩散、流匹配" class="" href="02_AI与深度学习.html">02 · 深度学习与 Transformer、扩散、流匹配</a><a data-label="03 · 机器人运动学、动力学与控制" class="" href="03_机器人学.html">03 · 机器人运动学、动力学与控制</a><a data-label="04 · 视觉、slam 与三维表示" class="" href="04_视觉与三维表示.html">04 · 视觉、SLAM 与三维表示</a><a data-label="05 · 空间智能：几何、关系、信念与世界模型" class="" href="05_空间智能.html">05 · 空间智能：几何、关系、信念与世界模型</a><a data-label="06 · 具身学习、diffusion policy 与 vla" class="" href="06_具身学习与VLA.html">06 · 具身学习、Diffusion Policy 与 VLA</a><a data-label="07 · gpu 显存、训练资源与部署预算" class="" href="07_GPU与训练资源.html">07 · GPU 显存、训练资源与部署预算</a><a data-label="08 · 术语、评测与实验复现" class="" href="08_术语表与评测.html">08 · 术语、评测与实验复现</a><a data-label="09 · 架构图与算法索引" class="" href="09_架构图与流程图.html">09 · 架构图与算法索引</a><a data-label="参考资料与来源追踪" class="" href="参考资料.html">参考资料与来源追踪</a><a data-label="如何补充知识库" class="" href="CONTRIBUTING.html">如何补充知识库</a><a data-label="embodied ai knowledge base" class="active" href="README.html">Embodied AI Knowledge Base</a><a data-label="第三方资源" class="" href="THIRD_PARTY_NOTICES.html">第三方资源</a><a href="10_交互实验.html">10 · 交互式直觉实验</a></nav></aside><main class="main"><div class="toolbar"><span id="reading-mode">详细推导</span><button id="detail-mode">展开全部推导</button><button id="brief-mode">精简模式</button><button id="print">打印 / PDF</button></div><article class="article"><h1>Embodied AI Knowledge Base</h1><div class="meta">基础讲义 · 2026-10-12 · 本地公式与矢量图 · 点击图示放大</div><nav class="toc" aria-label="本页目录"><b>CONTENTS · 本页目录</b><a href="#学习路线与模块">学习路线与模块</a><a href="#阅读功能">阅读功能</a><a href="#本地构建与检查">本地构建与检查</a><a href="#文件结构">文件结构</a><a href="#来源与内容范围">来源与内容范围</a><a href="#参与补充">参与补充</a></nav><p>AI、机器人学与空间智能的中文基础知识库。以带注解的架构图、符号表、逐步公式推导和交互实验连接模型、三维空间与闭环行动。</p>
+<p><strong>阅读 HTML：</strong> 下载仓库并打开 <a href="index.html">index.html</a>。公式、图示、字体和实验可离线使用，外部论文链接需要联网。GitHub 文件预览适合阅读 Markdown，完整排版与交互请使用 HTML 页面。</p>
+<h2 id="学习路线与模块">学习路线与模块</h2>
+<p>推荐：数学与坐标 → 深度学习 → 机器人学 → 三维视觉 → 空间智能 → 具身学习，再结合资源核算和评测设计。</p>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>模块</th>
+<th>内容</th>
+<th>Markdown / HTML</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00 知识地图</td>
+<td>知识依赖、任务链与学习路线</td>
+<td><a href="00_%E7%9F%A5%E8%AF%86%E5%9C%B0%E5%9B%BE.html">讲义</a> / <a href="00_%E7%9F%A5%E8%AF%86%E5%9C%B0%E5%9B%BE.html">页面</a></td>
+</tr>
+<tr>
+<td>01 数学与坐标</td>
+<td>最小二乘、KL、SE(3)、投影、ELBO</td>
+<td><a href="01_%E6%95%B0%E5%AD%A6%E4%B8%8E%E5%9D%90%E6%A0%87.html">讲义</a> / <a href="01_%E6%95%B0%E5%AD%A6%E4%B8%8E%E5%9D%90%E6%A0%87.html">页面</a></td>
+</tr>
+<tr>
+<td>02 AI 与深度学习</td>
+<td>反向传播、完整 Transformer、ViT、DDPM、Flow Matching</td>
+<td><a href="02_AI%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.html">讲义</a> / <a href="02_AI%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.html">页面</a></td>
+</tr>
+<tr>
+<td>03 机器人学</td>
+<td>二连杆、雅可比、阻尼 IK、动力学、LQR、MPC</td>
+<td><a href="03_%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6.html">讲义</a> / <a href="03_%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6.html">页面</a></td>
+</tr>
+<tr>
+<td>04 视觉与三维</td>
+<td>双目、ICP、SLAM、TSDF、NeRF、3DGS</td>
+<td><a href="04_%E8%A7%86%E8%A7%89%E4%B8%8E%E4%B8%89%E7%BB%B4%E8%A1%A8%E7%A4%BA.html">讲义</a> / <a href="04_%E8%A7%86%E8%A7%89%E4%B8%8E%E4%B8%89%E7%BB%B4%E8%A1%A8%E7%A4%BA.html">页面</a></td>
+</tr>
+<tr>
+<td>05 空间智能</td>
+<td>参考系、场景图、关系概率、信念、世界模型</td>
+<td><a href="05_%E7%A9%BA%E9%97%B4%E6%99%BA%E8%83%BD.html">讲义</a> / <a href="05_%E7%A9%BA%E9%97%B4%E6%99%BA%E8%83%BD.html">页面</a></td>
+</tr>
+<tr>
+<td>06 具身学习与 VLA</td>
+<td>BC、分布偏移、Diffusion Policy、VLA、动作接口</td>
+<td><a href="06_%E5%85%B7%E8%BA%AB%E5%AD%A6%E4%B9%A0%E4%B8%8EVLA.html">讲义</a> / <a href="06_%E5%85%B7%E8%BA%AB%E5%AD%A6%E4%B9%A0%E4%B8%8EVLA.html">页面</a></td>
+</tr>
+<tr>
+<td>07 GPU 与资源</td>
+<td>参数状态、激活、KV、LoRA、ZeRO、实测预算</td>
+<td><a href="07_GPU%E4%B8%8E%E8%AE%AD%E7%BB%83%E8%B5%84%E6%BA%90.html">讲义</a> / <a href="07_GPU%E4%B8%8E%E8%AE%AD%E7%BB%83%E8%B5%84%E6%BA%90.html">页面</a></td>
+</tr>
+<tr>
+<td>08 术语与评测</td>
+<td>指标、Wilson 区间、数据切分、实验复现</td>
+<td><a href="08_%E6%9C%AF%E8%AF%AD%E8%A1%A8%E4%B8%8E%E8%AF%84%E6%B5%8B.html">讲义</a> / <a href="08_%E6%9C%AF%E8%AF%AD%E8%A1%A8%E4%B8%8E%E8%AF%84%E6%B5%8B.html">页面</a></td>
+</tr>
+<tr>
+<td>09 架构图索引</td>
+<td>Transformer、动作扩散、具身闭环与导航恢复</td>
+<td><a href="09_%E6%9E%B6%E6%9E%84%E5%9B%BE%E4%B8%8E%E6%B5%81%E7%A8%8B%E5%9B%BE.html">讲义</a> / <a href="09_%E6%9E%B6%E6%9E%84%E5%9B%BE%E4%B8%8E%E6%B5%81%E7%A8%8B%E5%9B%BE.html">页面</a></td>
+</tr>
+<tr>
+<td>10 交互实验</td>
+<td>注意力、二连杆、空间参考系、显存估算</td>
+<td><a href="10_%E4%BA%A4%E4%BA%92%E5%AE%9E%E9%AA%8C.html">页面</a></td>
+</tr>
+</tbody></table></div>
+<h2 id="阅读功能">阅读功能</h2>
+<ul>
+<li>LaTeX 在构建时通过 KaTeX 编译为 HTML + MathML，使用本地字体，保留源码与公式编号。</li>
+<li>经典 Transformer 展示编码器 / 解码器、残差、归一化、因果遮罩和交叉注意力的 Q/K/V 来源。</li>
+<li>Mermaid 在构建时生成独立 SVG；点击图可放大，并查看图示源码。</li>
+<li>默认展开详细推导，可一键切换精简模式；打印时自动展开，可通过浏览器保存为 PDF。</li>
+<li>页面适配桌面与手机，运行时不依赖 CDN。</li>
+</ul>
+<h2 id="本地构建与检查">本地构建与检查</h2>
+<p>阅读已提交的 HTML 不需要安装依赖。编辑讲义后再构建，要求 Node.js 20 或更新版本：</p>
+<pre><code class="language-bash">git clone https://github.com/yky666/embodied_ai_knowledge_base.git
+cd embodied_ai_knowledge_base
+npm ci
+npm run build
+npm test
+npm run check:browser
+</code></pre>
+<p>Puppeteer 使用安装时提供的浏览器；Windows 也会识别常见的 Edge 安装路径。可通过 <code>PUPPETEER_EXECUTABLE_PATH</code> 指定已有 Chrome / Chromium / Edge。浏览器检查验证链接、离线加载、图示、手机布局和关键交互；它不代替推导的科学审阅。</p>
+<h2 id="文件结构">文件结构</h2>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>位置</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*.md</code></td>
+<td>可编辑讲义和来源</td>
+</tr>
+<tr>
+<td><code>*.html</code></td>
+<td>可直接阅读的预编译页面</td>
+</tr>
+<tr>
+<td><code>assets/</code></td>
+<td>SVG、Mermaid 源、本地字体、样式和交互代码</td>
+</tr>
+<tr>
+<td><code>scripts/</code></td>
+<td>跨平台构建与检查脚本</td>
+</tr>
+<tr>
+<td><code>third-party/</code></td>
+<td>随页面分发的第三方资源许可声明</td>
+</tr>
+<tr>
+<td><code>.github/workflows/check.yml</code></td>
+<td>提交和 PR 的自动检查</td>
+</tr>
+</tbody></table></div>
+<p>同时保存源码与生成页面，方便学习、修订和追踪历史。依赖、本地备份和临时检查结果不入库。</p>
+<h2 id="来源与内容范围">来源与内容范围</h2>
+<p>主要依据原论文、教材、官方教程及已有主题整理，出处见 <a href="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99.html">参考资料</a>。模型图为教学重绘，正文标明了假设与简化。四份飞书参考的最新内容尚未重新核验，研究索引也未逐篇展开；不提供最新性能排行榜或硬件价格。</p>
+<h2 id="参与补充">参与补充</h2>
+<p>欢迎通过 Issue 指出公式、图示与来源问题，或通过 PR 补充主题。写作结构与提交检查见 <a href="CONTRIBUTING.html">CONTRIBUTING.md</a>，第三方资源说明见 <a href="THIRD_PARTY_NOTICES.html">THIRD_PARTY_NOTICES.md</a>。</p>
+<nav class="chapter-neighbors"><a href="CONTRIBUTING.html">← 如何补充知识库</a><a href="THIRD_PARTY_NOTICES.html">第三方资源 →</a></nav><div class="foot">来源与核验状态见 <a href="参考资料.html">参考资料</a> · <a href="README.md">Markdown 源稿</a></div></article></main></div><dialog id="zoom" class="zoom"><button>关闭放大图</button><img alt="放大图"></dialog><script src="assets/atlas.js"></script></body></html>

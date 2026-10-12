@@ -1,0 +1,9 @@
+flowchart LR
+ P[参数量 / 精度] --> S[权重 + 梯度 + 优化器]
+ I[分辨率 / 帧数 / batch] --> A[激活 / attention]
+ D[多卡策略 / 算子] --> W[通信 / 临时区]
+ S --> T[预算下界与余量]
+ A --> T
+ W --> T
+ T --> M[小 batch profiler 实测]
+ M --> U[增加长度或 batch / 验证吞吐]

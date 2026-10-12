@@ -1,0 +1,101 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>09 · 架构图与算法索引 · 基础知识</title><link rel="stylesheet" href="assets/katex.min.css"><link rel="stylesheet" href="assets/atlas.css"></head><body><div class="layout"><aside class="sidebar"><div class="brand"><small>RESEARCH FOUNDATIONS</small>AI · Robotics<br>Spatial Intelligence</div><p>公式 · 几何 · 闭环行动</p><input class="search" id="search" aria-label="搜索模块" placeholder="搜索模块…"><nav class="nav"><a href="index.html">⌂ 知识库首页</a><a data-label="00 · 知识地图与学习路线（导读）" class="" href="00_知识地图.html">00 · 知识地图与学习路线（导读）</a><a data-label="01 · 数学、概率与坐标变换" class="" href="01_数学与坐标.html">01 · 数学、概率与坐标变换</a><a data-label="02 · 深度学习与 transformer、扩散、流匹配" class="" href="02_AI与深度学习.html">02 · 深度学习与 Transformer、扩散、流匹配</a><a data-label="03 · 机器人运动学、动力学与控制" class="" href="03_机器人学.html">03 · 机器人运动学、动力学与控制</a><a data-label="04 · 视觉、slam 与三维表示" class="" href="04_视觉与三维表示.html">04 · 视觉、SLAM 与三维表示</a><a data-label="05 · 空间智能：几何、关系、信念与世界模型" class="" href="05_空间智能.html">05 · 空间智能：几何、关系、信念与世界模型</a><a data-label="06 · 具身学习、diffusion policy 与 vla" class="" href="06_具身学习与VLA.html">06 · 具身学习、Diffusion Policy 与 VLA</a><a data-label="07 · gpu 显存、训练资源与部署预算" class="" href="07_GPU与训练资源.html">07 · GPU 显存、训练资源与部署预算</a><a data-label="08 · 术语、评测与实验复现" class="" href="08_术语表与评测.html">08 · 术语、评测与实验复现</a><a data-label="09 · 架构图与算法索引" class="active" href="09_架构图与流程图.html">09 · 架构图与算法索引</a><a data-label="参考资料与来源追踪" class="" href="参考资料.html">参考资料与来源追踪</a><a data-label="如何补充知识库" class="" href="CONTRIBUTING.html">如何补充知识库</a><a data-label="embodied ai knowledge base" class="" href="README.html">Embodied AI Knowledge Base</a><a data-label="第三方资源" class="" href="THIRD_PARTY_NOTICES.html">第三方资源</a><a href="10_交互实验.html">10 · 交互式直觉实验</a></nav></aside><main class="main"><div class="toolbar"><span id="reading-mode">详细推导</span><button id="detail-mode">展开全部推导</button><button id="brief-mode">精简模式</button><button id="print">打印 / PDF</button></div><article class="article"><h1>09 · 架构图与算法索引</h1><div class="meta">基础讲义 · 2026-10-12 · 本地公式与矢量图 · 点击图示放大</div><nav class="toc" aria-label="本页目录"><b>CONTENTS · 本页目录</b><a href="#1-经典-transformer">1. 经典 Transformer</a><a href="#2-具身系统高层与低层的闭环">2. 具身系统：高层与低层的闭环</a><a href="#3-训练流程与部署流程">3. 训练流程与部署流程</a><a href="#4-空间导航与恢复">4. 空间导航与恢复</a><a href="#5-正文图索引">5. 正文图索引</a><a href="#6-交互式直觉实验">6. 交互式直觉实验</a></nav><h1>09 · 架构图与算法索引</h1>
+<p>本库所有架构与流程图均存成可离线显示的 SVG，点击图片可放大。每张图对应正文的维数、公式、流程和边界说明；图是教学重绘，而非截取论文图片。</p>
+<h2 id="1-经典-transformer">1. 经典 Transformer</h2>
+<figure class="diagram"><img src="assets/transformer.svg" alt="完整 Transformer 编码器解码器图"><figcaption>含残差、Post-LN、masked self-attention、cross-attention 和右移目标。详细推导见 AI 章节第 3 节。</figcaption></figure>
+
+<p><a href="02_AI%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.html#3-%E7%BB%8F%E5%85%B8-transformer%E5%AE%8C%E6%95%B4%E7%BC%96%E7%A0%81%E5%99%A8%E8%A7%A3%E7%A0%81%E5%99%A8">注意力、FFN、位置、mask、复杂度推导</a></p>
+<h2 id="2-具身系统高层与低层的闭环">2. 具身系统：高层与低层的闭环</h2>
+<figure class="diagram"><img src="assets/09_架构图与流程图-1.svg" alt="09 · 架构图与算法索引 图 1"><figcaption>图 09.1 · 箭头表示信息 / 计算流程；具体输入、变量与假设见本节说明。</figcaption><details class="diagram-source"><summary>查看 Mermaid 图源码</summary><pre>flowchart TD
+ S[传感 RGB-D / IMU / 关节] --&gt; P[几何 / 语义感知]
+ P --&gt; B[信念状态 / 场景图 / 地图]
+ I[自然语言目标] --&gt; H[高层 grounding / 任务与技能规划]
+ B --&gt; H
+ H --&gt; L[低层策略 / 轨迹 / 动作块]
+ B --&gt; L
+ L --&gt; C[安全检查 / 高频控制]
+ C --&gt; E[机器人与环境]
+ E --&gt; S
+ D[演示 / 预训练] -.训练.-&gt; P
+ D -.训练.-&gt; L</pre></details></figure>
+<p>离线训练箭头与在线信息流区分；状态估计会在任务执行中持续更新。<a href="06_%E5%85%B7%E8%BA%AB%E5%AD%A6%E4%B9%A0%E4%B8%8EVLA.html">详见具身学习</a>。</p>
+<h2 id="3-训练流程与部署流程">3. 训练流程与部署流程</h2>
+<figure class="diagram"><img src="assets/09_架构图与流程图-2.svg" alt="09 · 架构图与算法索引 图 2"><figcaption>图 09.2 · 箭头表示信息 / 计算流程；具体输入、变量与假设见本节说明。</figcaption><details class="diagram-source"><summary>查看 Mermaid 图源码</summary><pre>flowchart LR
+ subgraph TRAIN[动作扩散训练]
+ A[观测动作窗口] --&gt; N[随机扩散步与噪声]
+ N --&gt; P[条件去噪网络]
+ P --&gt; L[MSE 与梯度更新]
+ end
+ subgraph RUN[在线部署]
+ O[新观测] --&gt; Z[高斯动作初始化]
+ Z --&gt; D[多次反向去噪]
+ D --&gt; U[反归一化与安全检查]
+ U --&gt; E[执行短片段]
+ E --&gt; O
+ end
+ P -.网络参数.-&gt; D</pre></details></figure>
+<p>训练每样本选随机噪声步；部署遍历采样器的多步过程。H、H_e 和 K_d 的定义见第 06 章。</p>
+<h2 id="4-空间导航与恢复">4. 空间导航与恢复</h2>
+<figure class="diagram"><img src="assets/09_架构图与流程图-3.svg" alt="09 · 架构图与算法索引 图 3"><figcaption>图 09.3 · 箭头表示信息 / 计算流程；具体输入、变量与假设见本节说明。</figcaption><details class="diagram-source"><summary>查看 Mermaid 图源码</summary><pre>flowchart TD
+ O[图像 / 深度 / 指令] --&gt; P[定位 / 目标 grounding]
+ P --&gt; M[占据地图与对象关系]
+ M --&gt; C{目标置信与路径可行?}
+ C --&gt;|否| V[主动观察 / 重定位]
+ V --&gt; O
+ C --&gt;|是| A[搜索路径 / 时间轨迹]
+ A --&gt; E[控制执行 / 碰撞监控]
+ E --&gt; F{达成目标?}
+ F --&gt;|否| O
+ F --&gt;|是| T[记录结果 / 终止]</pre></details></figure>
+<h2 id="5-正文图索引">5. 正文图索引</h2>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>图 / 算法</th>
+<th>章节</th>
+<th>配套说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>坐标链 / VAE</td>
+<td>01</td>
+<td>变换求逆、ELBO、重参数化</td>
+</tr>
+<tr>
+<td>注意力 / ViT / DDPM</td>
+<td>02</td>
+<td>张量维数、mask、后验及训练目标</td>
+</tr>
+<tr>
+<td>IK / 规划控制</td>
+<td>03</td>
+<td>阻尼求解、停止条件、轨迹接口</td>
+</tr>
+<tr>
+<td>SLAM / NeRF</td>
+<td>04</td>
+<td>残差、规范自由度、透射积分</td>
+</tr>
+<tr>
+<td>场景图 / 空间闭环</td>
+<td>05</td>
+<td>关系概率、主动观察、信念更新</td>
+</tr>
+<tr>
+<td>Diffusion Policy / VLA</td>
+<td>06</td>
+<td>条件注入、动作接口、重规划</td>
+</tr>
+<tr>
+<td>资源核算</td>
+<td>07</td>
+<td>状态与激活估算、profiler</td>
+</tr>
+<tr>
+<td>评测流程</td>
+<td>08</td>
+<td>数据独立性、区间与失败归因</td>
+</tr>
+</tbody></table></div>
+<h2 id="6-交互式直觉实验">6. 交互式直觉实验</h2>
+<p><a href="10_%E4%BA%A4%E4%BA%92%E5%AE%9E%E9%AA%8C.html">打开可调注意力、二连杆机械臂、空间参考系和资源估算</a>。实验是解释公式的简化模型，不是性能 benchmark 或实机控制器。</p>
+<nav class="chapter-neighbors"><a href="08_术语表与评测.html">← 08 · 术语、评测与实验复现</a><a href="参考资料.html">参考资料与来源追踪 →</a></nav><div class="foot">来源与核验状态见 <a href="参考资料.html">参考资料</a> · <a href="09_架构图与流程图.md">Markdown 源稿</a></div></article></main></div><dialog id="zoom" class="zoom"><button>关闭放大图</button><img alt="放大图"></dialog><script src="assets/atlas.js"></script></body></html>

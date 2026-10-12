@@ -1,0 +1,137 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>参考资料与来源追踪 · 基础知识</title><link rel="stylesheet" href="assets/katex.min.css"><link rel="stylesheet" href="assets/atlas.css"></head><body><div class="layout"><aside class="sidebar"><div class="brand"><small>RESEARCH FOUNDATIONS</small>AI · Robotics<br>Spatial Intelligence</div><p>公式 · 几何 · 闭环行动</p><input class="search" id="search" aria-label="搜索模块" placeholder="搜索模块…"><nav class="nav"><a href="index.html">⌂ 知识库首页</a><a data-label="00 · 知识地图与学习路线（导读）" class="" href="00_知识地图.html">00 · 知识地图与学习路线（导读）</a><a data-label="01 · 数学、概率与坐标变换" class="" href="01_数学与坐标.html">01 · 数学、概率与坐标变换</a><a data-label="02 · 深度学习与 transformer、扩散、流匹配" class="" href="02_AI与深度学习.html">02 · 深度学习与 Transformer、扩散、流匹配</a><a data-label="03 · 机器人运动学、动力学与控制" class="" href="03_机器人学.html">03 · 机器人运动学、动力学与控制</a><a data-label="04 · 视觉、slam 与三维表示" class="" href="04_视觉与三维表示.html">04 · 视觉、SLAM 与三维表示</a><a data-label="05 · 空间智能：几何、关系、信念与世界模型" class="" href="05_空间智能.html">05 · 空间智能：几何、关系、信念与世界模型</a><a data-label="06 · 具身学习、diffusion policy 与 vla" class="" href="06_具身学习与VLA.html">06 · 具身学习、Diffusion Policy 与 VLA</a><a data-label="07 · gpu 显存、训练资源与部署预算" class="" href="07_GPU与训练资源.html">07 · GPU 显存、训练资源与部署预算</a><a data-label="08 · 术语、评测与实验复现" class="" href="08_术语表与评测.html">08 · 术语、评测与实验复现</a><a data-label="09 · 架构图与算法索引" class="" href="09_架构图与流程图.html">09 · 架构图与算法索引</a><a data-label="参考资料与来源追踪" class="active" href="参考资料.html">参考资料与来源追踪</a><a data-label="如何补充知识库" class="" href="CONTRIBUTING.html">如何补充知识库</a><a data-label="embodied ai knowledge base" class="" href="README.html">Embodied AI Knowledge Base</a><a data-label="第三方资源" class="" href="THIRD_PARTY_NOTICES.html">第三方资源</a><a href="10_交互实验.html">10 · 交互式直觉实验</a></nav></aside><main class="main"><div class="toolbar"><span id="reading-mode">详细推导</span><button id="detail-mode">展开全部推导</button><button id="brief-mode">精简模式</button><button id="print">打印 / PDF</button></div><article class="article"><h1>参考资料与来源追踪</h1><div class="meta">基础讲义 · 2026-10-12 · 本地公式与矢量图 · 点击图示放大</div><nav class="toc" aria-label="本页目录"><b>CONTENTS · 本页目录</b><a href="#1-四份飞书参考本轮读取状态">1. 四份飞书参考：本轮读取状态</a><a href="#2-主要论文与教材">2. 主要论文与教材</a><a href="#3-维护与版本">3. 维护与版本</a></nav><h1>参考资料与来源追踪</h1>
+<h2 id="1-四份飞书参考本轮读取状态">1. 四份飞书参考：本轮读取状态</h2>
+<p>2026-10-12 尝试读取四个 Wiki 的目录，均因 user 登录过期 / token_missing 失败。因此本轮使用升级前本地稿中保留的主题内容，不能声称已核对飞书最新版本。旧稿中“已读取”是此前记录，不是本轮新验证。</p>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>参考</th>
+<th>用于本库</th>
+<th>本轮状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://mcnklerpx59m.feishu.cn/wiki/Ox9wwzPnlicwRFku2MIcpdiSnGd">GPU 显存占用与选型</a></td>
+<td>07：状态、激活、KV、选型维度</td>
+<td>待重新授权核验</td>
+</tr>
+<tr>
+<td><a href="https://mcnklerpx59m.feishu.cn/wiki/AsVkwilFQiXTY1kOt1nc8kaPnkc">KL 散度与 KL 正则</a></td>
+<td>01 / 06：KL、ELBO、策略正则</td>
+<td>待重新授权核验</td>
+</tr>
+<tr>
+<td><a href="https://mcnklerpx59m.feishu.cn/wiki/XvF7wICS4isarYkMJRMcNVLwnFg">具身智能与大模型术语</a></td>
+<td>06 / 08：术语、VLA、DP</td>
+<td>待重新授权核验</td>
+</tr>
+<tr>
+<td><a href="https://mcnklerpx59m.feishu.cn/wiki/LLW5wRwTQipNwWksh2Ac3hkIn0l">空间智能基础概念</a></td>
+<td>05：空间表征、关系与研究索引</td>
+<td>待重新授权核验</td>
+</tr>
+</tbody></table></div>
+<h2 id="2-主要论文与教材">2. 主要论文与教材</h2>
+<p>以下按方法来源引用，不把原始论文的发表时结果当作当前排行榜。正文与图片是自行推导、重绘和组织；明确了简化假设。论文版本可能变化，复现实验要另行固定版本。</p>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>模块</th>
+<th>来源</th>
+<th>定位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>VAE</td>
+<td><a href="https://arxiv.org/abs/1312.6114">Kingma &amp; Welling</a></td>
+<td>变分下界 / 重参数化</td>
+</tr>
+<tr>
+<td>Transformer</td>
+<td><a href="https://arxiv.org/html/1706.03762v7">Vaswani et al.</a></td>
+<td>§3 编码器 / 解码器 / 注意力</td>
+</tr>
+<tr>
+<td>ViT</td>
+<td><a href="https://arxiv.org/abs/2010.11929">Dosovitskiy et al.</a></td>
+<td>patch 序列与图像编码器</td>
+</tr>
+<tr>
+<td>DDPM</td>
+<td><a href="https://arxiv.org/html/2006.11239v2">Ho et al.</a></td>
+<td>§2–3 后验 / 噪声预测</td>
+</tr>
+<tr>
+<td>Flow Matching</td>
+<td><a href="https://arxiv.org/abs/2210.02747">Lipman et al.</a></td>
+<td>条件速度场 / 连续运输</td>
+</tr>
+<tr>
+<td>机器人学</td>
+<td><a href="https://modernrobotics.northwestern.edu/">Modern Robotics</a></td>
+<td>坐标、运动学、动力学、控制</td>
+</tr>
+<tr>
+<td>规划</td>
+<td><a href="https://lavalle.pl/planning/">LaValle: Planning Algorithms</a></td>
+<td>配置空间与采样规划</td>
+</tr>
+<tr>
+<td>因子图</td>
+<td><a href="https://gtsam.org/tutorials/intro.html">GTSAM 官方教程</a></td>
+<td>概率因子图 / MAP / SLAM</td>
+</tr>
+<tr>
+<td>NeRF</td>
+<td><a href="https://www.matthewtancik.com/nerf">作者项目与论文</a></td>
+<td>辐射场 / 体渲染</td>
+</tr>
+<tr>
+<td>3DGS</td>
+<td><a href="https://arxiv.org/abs/2308.04079">Kerbl et al.</a></td>
+<td>高斯表示 / 可微渲染</td>
+</tr>
+<tr>
+<td>世界模型</td>
+<td><a href="https://arxiv.org/abs/1803.10122">Ha &amp; Schmidhuber</a></td>
+<td>潜状态与预测</td>
+</tr>
+<tr>
+<td>DAgger</td>
+<td><a href="https://arxiv.org/abs/1011.0686">Ross et al.</a></td>
+<td>模仿学习 / 访问分布</td>
+</tr>
+<tr>
+<td>Diffusion Policy</td>
+<td><a href="https://diffusion-policy.cs.columbia.edu/">作者项目</a></td>
+<td>条件动作生成 / 滚动执行</td>
+</tr>
+<tr>
+<td>RT-2</td>
+<td><a href="https://arxiv.org/abs/2307.15818">Brohan et al.</a></td>
+<td>视觉语言到动作 token</td>
+</tr>
+<tr>
+<td>LoRA</td>
+<td><a href="https://arxiv.org/abs/2106.09685">Hu et al.</a></td>
+<td>低秩可训练参数</td>
+</tr>
+<tr>
+<td>ZeRO</td>
+<td><a href="https://arxiv.org/abs/1910.02054">Rajbhandari et al.</a></td>
+<td>参数 / 梯度 / 优化器分片</td>
+</tr>
+<tr>
+<td>FlashAttention</td>
+<td><a href="https://arxiv.org/abs/2205.14135">Dao et al.</a></td>
+<td>避免完整注意力矩阵存储</td>
+</tr>
+<tr>
+<td>SPL</td>
+<td><a href="https://arxiv.org/abs/1807.06757">Embodied Navigation Evaluation</a></td>
+<td>成功加路径效率</td>
+</tr>
+</tbody></table></div>
+<p>本轮直接打开核对了 Transformer、DDPM、DP 项目、Flow Matching、Modern Robotics、GTSAM、NeRF、3DGS、VAE、LoRA 和导航评测来源；其余为进一步阅读入口，不声称已逐页核验。</p>
+<h2 id="3-维护与版本">3. 维护与版本</h2>
+<p>本版保留 Markdown、LaTeX、Mermaid 源码、独立 SVG 与本地字体。版本历史通过 Git 追踪，本地升级备份不随仓库上传。重新构建见 README。研究索引只给检索方向，并未覆盖全部最新模型与 benchmark。</p>
+<nav class="chapter-neighbors"><a href="09_架构图与流程图.html">← 09 · 架构图与算法索引</a><a href="CONTRIBUTING.html">如何补充知识库 →</a></nav><div class="foot">来源与核验状态见 <a href="参考资料.html">参考资料</a> · <a href="参考资料.md">Markdown 源稿</a></div></article></main></div><dialog id="zoom" class="zoom"><button>关闭放大图</button><img alt="放大图"></dialog><script src="assets/atlas.js"></script></body></html>

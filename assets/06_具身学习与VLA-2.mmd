@@ -1,0 +1,13 @@
+flowchart LR
+ I[图像 / 视频] --> V[视觉 encoder]
+ V --> VP[投影到共享 token 空间]
+ L[任务语言] --> T[tokenizer / 文本嵌入]
+ S[机器人本体状态] --> P[状态编码 / embodiment 标记]
+ VP --> B[多模态 Transformer]
+ T --> B
+ P --> B
+ B --> D[离散动作 token head]
+ B --> C[连续高斯 / 扩散 / 流 head]
+ D --> A[反量化 / 动作适配器]
+ C --> A
+ A --> F[安全控制接口]
