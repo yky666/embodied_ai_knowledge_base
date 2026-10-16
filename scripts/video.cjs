@@ -17,7 +17,7 @@ function findFfmpeg() {
   if (process.env.FFMPEG_PATH) return process.env.FFMPEG_PATH;
   const py = path.join(venvBin, isWin ? 'python.exe' : 'python');
   if (fs.existsSync(py)) {
-    const r = spawnSync(py, ['-c', 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())'], { encoding: 'utf8' });
+    const r = spawnSync(py, ['-c', 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())'], { encoding: 'utf8', env: { ...process.env, PYTHONIOENCODING: 'utf-8' } });
     if (r.status === 0 && r.stdout.trim()) return r.stdout.trim();
   }
   return 'ffmpeg';
