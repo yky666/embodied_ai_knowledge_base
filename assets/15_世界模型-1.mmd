@@ -1,0 +1,12 @@
+flowchart LR
+ H0[h t-1] --> G[GRU]
+ Z0[z t-1] --> G
+ A0[a t-1] --> G
+ G --> H1[h t]
+ H1 --> PR[先验 p z t 给定 h t]
+ H1 --> PO[后验 q z t 给定 h t, o t]
+ O[o t 编码] --> PO
+ PO --> Z1[z t]
+ Z1 --> DEC[解码 o t / 回报 r t / 继续标志]
+ H1 --> DEC
+ PR -.KL 对齐.- PO

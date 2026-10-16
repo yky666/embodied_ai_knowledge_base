@@ -135,6 +135,8 @@ $$p(A|I,l,s)=\prod_jp(b_j|b_{<j},I,l,s),\quad L_{act}=-\sum_j\log p(b_j|b_{<j},I
 
 ## 7. 评测与失败恢复
 
+延伸：强化学习、奖励设计与 Sim2Real 见 [11 · 强化学习与 Sim2Real](11_强化学习与Sim2Real.md)；ACT、流匹配动作头、FAST 分词、跨形态数据与通用策略见 [17 · 机器人基础模型与数据](17_机器人基础模型与数据.md)；配套视频“行为克隆与 DAgger”“Diffusion Policy”“VLA 与流匹配”见 [18 · 视频讲解](18_视频讲解.md)。
+
 评估按物体、布局、相机、机器人划分 OOD，记录成功数 / 总数、人工干预、掉落、碰撞、延迟与复位。区分 grounding 错、深度错、动作单位错、分布偏移、接触偏差和超时。失败恢复需要观察条件、备用动作和明确终止，不能仅依赖生成模型反复采样。
 
 来源：[Diffusion Policy 原论文及项目](https://diffusion-policy.cs.columbia.edu/)、[RT-2](https://arxiv.org/abs/2307.15818)、[DAgger](https://arxiv.org/abs/1011.0686)。本章使用一般符号重述，不声称所有 VLA 都采用同一输入和控制头。

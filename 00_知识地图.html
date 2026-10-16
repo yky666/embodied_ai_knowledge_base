@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>00 · 知识地图与学习路线（导读） · 基础知识</title><link rel="stylesheet" href="assets/katex.min.css"><link rel="stylesheet" href="assets/atlas.css"></head><body><div class="layout"><aside class="sidebar"><div class="brand"><small>RESEARCH FOUNDATIONS</small>AI · Robotics<br>Spatial Intelligence</div><p>公式 · 几何 · 闭环行动</p><input class="search" id="search" aria-label="搜索模块" placeholder="搜索模块…"><nav class="nav"><a href="index.html">⌂ 知识库首页</a><a data-label="00 · 知识地图与学习路线（导读）" class="active" href="00_知识地图.html">00 · 知识地图与学习路线（导读）</a><a data-label="01 · 数学、概率与坐标变换" class="" href="01_数学与坐标.html">01 · 数学、概率与坐标变换</a><a data-label="02 · 深度学习与 transformer、扩散、流匹配" class="" href="02_AI与深度学习.html">02 · 深度学习与 Transformer、扩散、流匹配</a><a data-label="03 · 机器人运动学、动力学与控制" class="" href="03_机器人学.html">03 · 机器人运动学、动力学与控制</a><a data-label="04 · 视觉、slam 与三维表示" class="" href="04_视觉与三维表示.html">04 · 视觉、SLAM 与三维表示</a><a data-label="05 · 空间智能：几何、关系、信念与世界模型" class="" href="05_空间智能.html">05 · 空间智能：几何、关系、信念与世界模型</a><a data-label="06 · 具身学习、diffusion policy 与 vla" class="" href="06_具身学习与VLA.html">06 · 具身学习、Diffusion Policy 与 VLA</a><a data-label="07 · gpu 显存、训练资源与部署预算" class="" href="07_GPU与训练资源.html">07 · GPU 显存、训练资源与部署预算</a><a data-label="08 · 术语、评测与实验复现" class="" href="08_术语表与评测.html">08 · 术语、评测与实验复现</a><a data-label="09 · 架构图与算法索引" class="" href="09_架构图与流程图.html">09 · 架构图与算法索引</a><a data-label="参考资料与来源追踪" class="" href="参考资料.html">参考资料与来源追踪</a><a data-label="如何补充知识库" class="" href="CONTRIBUTING.html">如何补充知识库</a><a data-label="embodied ai knowledge base" class="" href="README.html">Embodied AI Knowledge Base</a><a data-label="第三方资源" class="" href="THIRD_PARTY_NOTICES.html">第三方资源</a><a href="10_交互实验.html">10 · 交互式直觉实验</a></nav></aside><main class="main"><div class="toolbar"><span id="reading-mode">详细推导</span><button id="detail-mode">展开全部推导</button><button id="brief-mode">精简模式</button><button id="print">打印 / PDF</button></div><article class="article"><h1>00 · 知识地图与学习路线（导读）</h1><div class="meta">基础讲义 · 2026-10-12 · 本地公式与矢量图 · 点击图示放大</div><nav class="toc" aria-label="本页目录"><b>CONTENTS · 本页目录</b><a href="#1-从一个机器人任务看完整知识链">1. 从一个机器人任务看完整知识链</a><a href="#2-模块之间的依赖图">2. 模块之间的依赖图</a><a href="#3-按研究目标选学习模块">3. 按研究目标选学习模块</a><a href="#4-学习成果应该是什么">4. 学习成果应该是什么</a><a href="#5-符号与知识边界">5. 符号与知识边界</a></nav><h2 id="1-从一个机器人任务看完整知识链">1. 从一个机器人任务看完整知识链</h2>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>00 · 知识地图与学习路线（导读） · 基础知识</title><link rel="stylesheet" href="assets/katex.min.css"><link rel="stylesheet" href="assets/atlas.css"></head><body><div class="layout"><aside class="sidebar"><div class="brand"><small>RESEARCH FOUNDATIONS</small>AI · Robotics<br>Spatial Intelligence</div><p>公式 · 几何 · 闭环行动</p><input class="search" id="search" aria-label="搜索模块" placeholder="搜索模块…"><nav class="nav"><a href="index.html">⌂ 知识库首页</a><a data-label="00 · 知识地图与学习路线（导读）" class="active" href="00_知识地图.html">00 · 知识地图与学习路线（导读）</a><a data-label="01 · 数学、概率与坐标变换" class="" href="01_数学与坐标.html">01 · 数学、概率与坐标变换</a><a data-label="02 · 深度学习与 transformer、扩散、流匹配" class="" href="02_AI与深度学习.html">02 · 深度学习与 Transformer、扩散、流匹配</a><a data-label="03 · 机器人运动学、动力学与控制" class="" href="03_机器人学.html">03 · 机器人运动学、动力学与控制</a><a data-label="04 · 视觉、slam 与三维表示" class="" href="04_视觉与三维表示.html">04 · 视觉、SLAM 与三维表示</a><a data-label="05 · 空间智能：几何、关系、信念与世界模型" class="" href="05_空间智能.html">05 · 空间智能：几何、关系、信念与世界模型</a><a data-label="06 · 具身学习、diffusion policy 与 vla" class="" href="06_具身学习与VLA.html">06 · 具身学习、Diffusion Policy 与 VLA</a><a data-label="07 · gpu 显存、训练资源与部署预算" class="" href="07_GPU与训练资源.html">07 · GPU 显存、训练资源与部署预算</a><a data-label="08 · 术语、评测与实验复现" class="" href="08_术语表与评测.html">08 · 术语、评测与实验复现</a><a data-label="09 · 架构图与算法索引" class="" href="09_架构图与流程图.html">09 · 架构图与算法索引</a><a data-label="10 · 交互式直觉实验" class="" href="10_交互实验.html">10 · 交互式直觉实验</a><a data-label="11 · 强化学习、奖励设计与 sim2real" class="" href="11_强化学习与Sim2Real.html">11 · 强化学习、奖励设计与 Sim2Real</a><a data-label="12 · 抓取、接触力学与灵巧操作" class="" href="12_抓取与灵巧操作.html">12 · 抓取、接触力学与灵巧操作</a><a data-label="13 · 移动导航、主动探索与视觉语言导航" class="" href="13_导航与视觉语言导航.html">13 · 移动导航、主动探索与视觉语言导航</a><a data-label="14 · 三维基础模型、开放词汇场景理解与空间推理" class="" href="14_三维基础模型与空间推理.html">14 · 三维基础模型、开放词汇场景理解与空间推理</a><a data-label="15 · 世界模型：潜动力学、视频生成与想象中规划" class="" href="15_世界模型.html">15 · 世界模型：潜动力学、视频生成与想象中规划</a><a data-label="16 · 腿足与人形机器人：平衡、步态与全身控制" class="" href="16_腿足与人形机器人.html">16 · 腿足与人形机器人：平衡、步态与全身控制</a><a data-label="17 · 机器人基础模型：数据、动作表示与通用策略" class="" href="17_机器人基础模型与数据.html">17 · 机器人基础模型：数据、动作表示与通用策略</a><a data-label="18 · 视频讲解：动画、配音与字幕" class="" href="18_视频讲解.html">18 · 视频讲解：动画、配音与字幕</a><a data-label="参考资料与来源追踪" class="" href="参考资料.html">参考资料与来源追踪</a><a data-label="如何补充知识库" class="" href="CONTRIBUTING.html">如何补充知识库</a><a data-label="embodied ai knowledge base" class="" href="README.html">Embodied AI Knowledge Base</a><a data-label="第三方资源" class="" href="THIRD_PARTY_NOTICES.html">第三方资源</a></nav></aside><main class="main"><div class="toolbar"><span id="reading-mode">详细推导</span><button id="detail-mode">展开全部推导</button><button id="brief-mode">精简模式</button><button id="print">打印 / PDF</button></div><article class="article"><h1>00 · 知识地图与学习路线（导读）</h1><div class="meta">基础讲义 · 2026-10-12 · 本地公式与矢量图 · 点击图示放大</div><nav class="toc" aria-label="本页目录"><b>CONTENTS · 本页目录</b><a href="#1-从一个机器人任务看完整知识链">1. 从一个机器人任务看完整知识链</a><a href="#2-模块之间的依赖图">2. 模块之间的依赖图</a><a href="#3-按研究目标选学习模块">3. 按研究目标选学习模块</a><a href="#4-学习成果应该是什么">4. 学习成果应该是什么</a><a href="#5-符号与知识边界">5. 符号与知识边界</a></nav><h2 id="1-从一个机器人任务看完整知识链">1. 从一个机器人任务看完整知识链</h2>
 <p>任务：“把桌上的红色杯子放入水槽。”</p>
 <ol>
 <li>语言理解把命令拆成目标对象“红杯”和目标区域“水槽”。</li>
@@ -24,6 +24,62 @@
  E --&gt; V
  E --&gt; T[评测 / 复现 / 失败分析]</pre></details></figure>
 <p>若从机器学习切入，可优先学 01、02、04、06；若从机械臂实验切入，优先学 01、03、04、06；若研究空间推理，优先学 01、04、05、08。</p>
+<h3 id="专题模块1117与前置依赖">专题模块（11–17）与前置依赖</h3>
+<figure class="diagram"><img src="assets/00_知识地图-2.svg" alt="00 · 知识地图与学习路线（导读） 图 2"><figcaption>图 00.2 · 箭头表示信息 / 计算流程；具体输入、变量与假设见本节说明。</figcaption><details class="diagram-source"><summary>查看 Mermaid 图源码</summary><pre>flowchart LR
+ B03[03 机器人学] --&gt; M11[11 强化学习 / Sim2Real]
+ B06[06 具身学习 / VLA] --&gt; M11
+ B03 --&gt; M12[12 抓取 / 灵巧操作]
+ B04[04 三维视觉] --&gt; M12
+ B04 --&gt; M13[13 导航 / VLN]
+ B05[05 空间智能] --&gt; M13
+ B04 --&gt; M14[14 三维基础模型 / 空间推理]
+ B05 --&gt; M14
+ B05 --&gt; M15[15 世界模型]
+ M11 --&gt; M15
+ B03 --&gt; M16[16 腿足 / 人形]
+ M11 --&gt; M16
+ B06 --&gt; M17[17 机器人基础模型]
+ M12 --&gt; M17</pre></details></figure>
+<div class="tablebox"><table>
+<thead>
+<tr>
+<th>研究方向</th>
+<th>推荐顺序</th>
+<th>配套视频（18）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>空间智能 / 空间问答</td>
+<td>01 → 04 → 05 → 14 → 08</td>
+<td>参考系、卡尔曼、体渲染</td>
+</tr>
+<tr>
+<td>操作与抓取</td>
+<td>03 → 12 → 06 → 17</td>
+<td>二连杆 IK、抓取力学、DP、VLA</td>
+</tr>
+<tr>
+<td>移动导航</td>
+<td>04 → 05 → 13</td>
+<td>导航建图与探索</td>
+</tr>
+<tr>
+<td>腿足 / 人形</td>
+<td>03 → 11 → 16</td>
+<td>PPO 与 Sim2Real、捕获点</td>
+</tr>
+<tr>
+<td>世界模型与规划</td>
+<td>05 → 11 → 15</td>
+<td>世界模型与 CEM</td>
+</tr>
+<tr>
+<td>通用机器人策略</td>
+<td>02 → 06 → 17 → 08</td>
+<td>BC 与 DAgger、DP、VLA</td>
+</tr>
+</tbody></table></div>
+<p>建议先看对应视频建立直觉，再读讲义中的符号表与推导，最后用 10 交互实验或自己的小数值例子验证。</p>
 <h2 id="3-按研究目标选学习模块">3. 按研究目标选学习模块</h2>
 <div class="tablebox"><table>
 <thead>
@@ -69,6 +125,24 @@
 <td>显存、吞吐、延迟 profiling</td>
 <td>模型/任务→可运行系统</td>
 <td>精度/并行/缓存优化</td>
+</tr>
+<tr>
+<td>腿足行走</td>
+<td>质心动力学、RL、Sim2Real</td>
+<td>本体感知→关节目标</td>
+<td>MPC + WBC、PPO 教师—学生</td>
+</tr>
+<tr>
+<td>开放词汇 3D</td>
+<td>多视角几何、CLIP 特征融合</td>
+<td>RGB-D 序列→可查询 3D 特征</td>
+<td>OpenScene、ConceptGraphs</td>
+</tr>
+<tr>
+<td>通用操作策略</td>
+<td>数据混合、动作表示、评测统计</td>
+<td>多相机+语言→动作块</td>
+<td>ACT、Octo、OpenVLA、π0</td>
 </tr>
 </tbody></table></div>
 <h2 id="4-学习成果应该是什么">4. 学习成果应该是什么</h2>

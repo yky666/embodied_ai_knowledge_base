@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node scripts/build.cjs",
     "test": "node scripts/check.cjs",
-    "check:browser": "node scripts/check.cjs --browser"
+    "check:browser": "node scripts/check.cjs --browser",
+    "video": "node scripts/video.cjs"
   },
   "engines": { "node": ">=20" },
   "devDependencies": {

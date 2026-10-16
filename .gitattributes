@@ -10,3 +10,6 @@
 *.woff binary
 *.woff2 binary
 *.ttf binary
+*.mp4 binary
+*.jpg binary
+*.srt text eol=lf

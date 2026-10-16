@@ -20,7 +20,10 @@ async function browserChecks() {
   try {
     const page = await browser.newPage();
     page.on('pageerror', e => errors.push(e.message));
-    page.on('requestfailed', r => errors.push(`request failed: ${r.url()}`));
+    page.on('requestfailed', r => {
+      if (r.resourceType() === 'media' && r.failure()?.errorText === 'net::ERR_ABORTED') return;
+      errors.push(`request failed: ${r.url()}`);
+    });
     page.on('request', r => { if (/^https?:/.test(r.url())) errors.push(`offline page requests network: ${r.url()}`); });
     for (const width of [1440, 390]) {
       await page.setViewport({ width, height: 1000 });
@@ -34,6 +37,16 @@ async function browserChecks() {
         }));
         if (issues.broken || issues.overflow || !issues.wrappers) errors.push(`${file} at ${width}px: ${JSON.stringify(issues)}`);
       }
+    }
+    const videoPage = files.find(f => f.startsWith('18_'));
+    if (videoPage) {
+      await page.goto(pathToFileURL(path.join(root, videoPage)).href, { waitUntil: 'networkidle0' });
+      const bad = await page.$$eval('video', vs => Promise.all(vs.map(v => v.readyState >= 1 ? null : new Promise(res => {
+        v.addEventListener('loadedmetadata', () => res(null), { once: true });
+        v.addEventListener('error', () => res(v.src), { once: true });
+        setTimeout(() => res(v.src), 15000);
+      }))).then(r => r.filter(Boolean).concat(vs.filter(v => !(v.duration > 0)).map(v => v.src))));
+      if (bad.length) errors.push(`videos not playable: ${[...new Set(bad)].join(', ')}`);
     }
     await page.goto(pathToFileURL(path.join(root, '02_AI与深度学习.html')).href);
     await page.click('#brief-mode');

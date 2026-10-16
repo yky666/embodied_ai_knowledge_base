@@ -3,3 +3,5 @@
 body{overflow-x:clip}.katex .katex-mathml{contain:strict}
 html{overflow-x:hidden}
 .katex .katex-mathml{position:fixed!important;top:0!important;left:0!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)}
+
+.lesson-video{display:block;width:100%;max-width:960px;aspect-ratio:16/9;margin:14px auto 10px;border-radius:10px;background:#0f2530;box-shadow:0 6px 22px rgba(21,43,56,.18)}@media print{.lesson-video{display:none}}

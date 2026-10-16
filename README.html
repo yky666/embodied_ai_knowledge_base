@@ -1,7 +1,7 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Embodied AI Knowledge Base · 基础知识</title><link rel="stylesheet" href="assets/katex.min.css"><link rel="stylesheet" href="assets/atlas.css"></head><body><div class="layout"><aside class="sidebar"><div class="brand"><small>RESEARCH FOUNDATIONS</small>AI · Robotics<br>Spatial Intelligence</div><p>公式 · 几何 · 闭环行动</p><input class="search" id="search" aria-label="搜索模块" placeholder="搜索模块…"><nav class="nav"><a href="index.html">⌂ 知识库首页</a><a data-label="00 · 知识地图与学习路线（导读）" class="" href="00_知识地图.html">00 · 知识地图与学习路线（导读）</a><a data-label="01 · 数学、概率与坐标变换" class="" href="01_数学与坐标.html">01 · 数学、概率与坐标变换</a><a data-label="02 · 深度学习与 transformer、扩散、流匹配" class="" href="02_AI与深度学习.html">02 · 深度学习与 Transformer、扩散、流匹配</a><a data-label="03 · 机器人运动学、动力学与控制" class="" href="03_机器人学.html">03 · 机器人运动学、动力学与控制</a><a data-label="04 · 视觉、slam 与三维表示" class="" href="04_视觉与三维表示.html">04 · 视觉、SLAM 与三维表示</a><a data-label="05 · 空间智能：几何、关系、信念与世界模型" class="" href="05_空间智能.html">05 · 空间智能：几何、关系、信念与世界模型</a><a data-label="06 · 具身学习、diffusion policy 与 vla" class="" href="06_具身学习与VLA.html">06 · 具身学习、Diffusion Policy 与 VLA</a><a data-label="07 · gpu 显存、训练资源与部署预算" class="" href="07_GPU与训练资源.html">07 · GPU 显存、训练资源与部署预算</a><a data-label="08 · 术语、评测与实验复现" class="" href="08_术语表与评测.html">08 · 术语、评测与实验复现</a><a data-label="09 · 架构图与算法索引" class="" href="09_架构图与流程图.html">09 · 架构图与算法索引</a><a data-label="参考资料与来源追踪" class="" href="参考资料.html">参考资料与来源追踪</a><a data-label="如何补充知识库" class="" href="CONTRIBUTING.html">如何补充知识库</a><a data-label="embodied ai knowledge base" class="active" href="README.html">Embodied AI Knowledge Base</a><a data-label="第三方资源" class="" href="THIRD_PARTY_NOTICES.html">第三方资源</a><a href="10_交互实验.html">10 · 交互式直觉实验</a></nav></aside><main class="main"><div class="toolbar"><span id="reading-mode">详细推导</span><button id="detail-mode">展开全部推导</button><button id="brief-mode">精简模式</button><button id="print">打印 / PDF</button></div><article class="article"><h1>Embodied AI Knowledge Base</h1><div class="meta">基础讲义 · 2026-10-12 · 本地公式与矢量图 · 点击图示放大</div><nav class="toc" aria-label="本页目录"><b>CONTENTS · 本页目录</b><a href="#学习路线与模块">学习路线与模块</a><a href="#阅读功能">阅读功能</a><a href="#本地构建与检查">本地构建与检查</a><a href="#文件结构">文件结构</a><a href="#来源与内容范围">来源与内容范围</a><a href="#参与补充">参与补充</a></nav><p>AI、机器人学与空间智能的中文基础知识库。以带注解的架构图、符号表、逐步公式推导和交互实验连接模型、三维空间与闭环行动。</p>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Embodied AI Knowledge Base · 基础知识</title><link rel="stylesheet" href="assets/katex.min.css"><link rel="stylesheet" href="assets/atlas.css"></head><body><div class="layout"><aside class="sidebar"><div class="brand"><small>RESEARCH FOUNDATIONS</small>AI · Robotics<br>Spatial Intelligence</div><p>公式 · 几何 · 闭环行动</p><input class="search" id="search" aria-label="搜索模块" placeholder="搜索模块…"><nav class="nav"><a href="index.html">⌂ 知识库首页</a><a data-label="00 · 知识地图与学习路线（导读）" class="" href="00_知识地图.html">00 · 知识地图与学习路线（导读）</a><a data-label="01 · 数学、概率与坐标变换" class="" href="01_数学与坐标.html">01 · 数学、概率与坐标变换</a><a data-label="02 · 深度学习与 transformer、扩散、流匹配" class="" href="02_AI与深度学习.html">02 · 深度学习与 Transformer、扩散、流匹配</a><a data-label="03 · 机器人运动学、动力学与控制" class="" href="03_机器人学.html">03 · 机器人运动学、动力学与控制</a><a data-label="04 · 视觉、slam 与三维表示" class="" href="04_视觉与三维表示.html">04 · 视觉、SLAM 与三维表示</a><a data-label="05 · 空间智能：几何、关系、信念与世界模型" class="" href="05_空间智能.html">05 · 空间智能：几何、关系、信念与世界模型</a><a data-label="06 · 具身学习、diffusion policy 与 vla" class="" href="06_具身学习与VLA.html">06 · 具身学习、Diffusion Policy 与 VLA</a><a data-label="07 · gpu 显存、训练资源与部署预算" class="" href="07_GPU与训练资源.html">07 · GPU 显存、训练资源与部署预算</a><a data-label="08 · 术语、评测与实验复现" class="" href="08_术语表与评测.html">08 · 术语、评测与实验复现</a><a data-label="09 · 架构图与算法索引" class="" href="09_架构图与流程图.html">09 · 架构图与算法索引</a><a data-label="10 · 交互式直觉实验" class="" href="10_交互实验.html">10 · 交互式直觉实验</a><a data-label="11 · 强化学习、奖励设计与 sim2real" class="" href="11_强化学习与Sim2Real.html">11 · 强化学习、奖励设计与 Sim2Real</a><a data-label="12 · 抓取、接触力学与灵巧操作" class="" href="12_抓取与灵巧操作.html">12 · 抓取、接触力学与灵巧操作</a><a data-label="13 · 移动导航、主动探索与视觉语言导航" class="" href="13_导航与视觉语言导航.html">13 · 移动导航、主动探索与视觉语言导航</a><a data-label="14 · 三维基础模型、开放词汇场景理解与空间推理" class="" href="14_三维基础模型与空间推理.html">14 · 三维基础模型、开放词汇场景理解与空间推理</a><a data-label="15 · 世界模型：潜动力学、视频生成与想象中规划" class="" href="15_世界模型.html">15 · 世界模型：潜动力学、视频生成与想象中规划</a><a data-label="16 · 腿足与人形机器人：平衡、步态与全身控制" class="" href="16_腿足与人形机器人.html">16 · 腿足与人形机器人：平衡、步态与全身控制</a><a data-label="17 · 机器人基础模型：数据、动作表示与通用策略" class="" href="17_机器人基础模型与数据.html">17 · 机器人基础模型：数据、动作表示与通用策略</a><a data-label="18 · 视频讲解：动画、配音与字幕" class="" href="18_视频讲解.html">18 · 视频讲解：动画、配音与字幕</a><a data-label="参考资料与来源追踪" class="" href="参考资料.html">参考资料与来源追踪</a><a data-label="如何补充知识库" class="" href="CONTRIBUTING.html">如何补充知识库</a><a data-label="embodied ai knowledge base" class="active" href="README.html">Embodied AI Knowledge Base</a><a data-label="第三方资源" class="" href="THIRD_PARTY_NOTICES.html">第三方资源</a></nav></aside><main class="main"><div class="toolbar"><span id="reading-mode">详细推导</span><button id="detail-mode">展开全部推导</button><button id="brief-mode">精简模式</button><button id="print">打印 / PDF</button></div><article class="article"><h1>Embodied AI Knowledge Base</h1><div class="meta">基础讲义 · 2026-10-12 · 本地公式与矢量图 · 点击图示放大</div><nav class="toc" aria-label="本页目录"><b>CONTENTS · 本页目录</b><a href="#学习路线与模块">学习路线与模块</a><a href="#阅读功能">阅读功能</a><a href="#本地构建与检查">本地构建与检查</a><a href="#文件结构">文件结构</a><a href="#来源与内容范围">来源与内容范围</a><a href="#参与补充">参与补充</a></nav><p>AI、机器人学与空间智能的中文基础知识库。以带注解的架构图、符号表、逐步公式推导和交互实验连接模型、三维空间与闭环行动。</p>
 <p><strong>阅读 HTML：</strong> 下载仓库并打开 <a href="index.html">index.html</a>。公式、图示、字体和实验可离线使用，外部论文链接需要联网。GitHub 文件预览适合阅读 Markdown，完整排版与交互请使用 HTML 页面。</p>
 <h2 id="学习路线与模块">学习路线与模块</h2>
-<p>推荐：数学与坐标 → 深度学习 → 机器人学 → 三维视觉 → 空间智能 → 具身学习，再结合资源核算和评测设计。</p>
+<p>推荐：数学与坐标 → 深度学习 → 机器人学 → 三维视觉 → 空间智能 → 具身学习，再结合资源核算和评测设计；之后按研究方向选读 11–17 专题。每个核心知识点配有 2–3 分钟的动画讲解视频（中文配音 + 字幕），见 <a href="18_%E8%A7%86%E9%A2%91%E8%AE%B2%E8%A7%A3.html">18 视频讲解</a>。</p>
 <div class="tablebox"><table>
 <thead>
 <tr>
@@ -65,6 +65,46 @@
 <td>注意力、二连杆、空间参考系、显存估算</td>
 <td><a href="10_%E4%BA%A4%E4%BA%92%E5%AE%9E%E9%AA%8C.html">页面</a></td>
 </tr>
+<tr>
+<td>11 强化学习与 Sim2Real</td>
+<td>策略梯度、GAE、PPO、SAC、奖励整形、域随机化、教师—学生</td>
+<td><a href="11_%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B8%8ESim2Real.html">讲义</a> / <a href="11_%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B8%8ESim2Real.html">页面</a></td>
+</tr>
+<tr>
+<td>12 抓取与灵巧操作</td>
+<td>摩擦锥、力封闭、对拓抓取、阻抗控制、触觉、重定向</td>
+<td><a href="12_%E6%8A%93%E5%8F%96%E4%B8%8E%E7%81%B5%E5%B7%A7%E6%93%8D%E4%BD%9C.html">讲义</a> / <a href="12_%E6%8A%93%E5%8F%96%E4%B8%8E%E7%81%B5%E5%B7%A7%E6%93%8D%E4%BD%9C.html">页面</a></td>
+</tr>
+<tr>
+<td>13 导航与 VLN</td>
+<td>占据栅格、A*、DWA、前沿探索、语义导航、VLN</td>
+<td><a href="13_%E5%AF%BC%E8%88%AA%E4%B8%8E%E8%A7%86%E8%A7%89%E8%AF%AD%E8%A8%80%E5%AF%BC%E8%88%AA.html">讲义</a> / <a href="13_%E5%AF%BC%E8%88%AA%E4%B8%8E%E8%A7%86%E8%A7%89%E8%AF%AD%E8%A8%80%E5%AF%BC%E8%88%AA.html">页面</a></td>
+</tr>
+<tr>
+<td>14 三维基础模型</td>
+<td>PointNet、单目深度、DUSt3R / VGGT、开放词汇 3D、空间问答</td>
+<td><a href="14_%E4%B8%89%E7%BB%B4%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%8E%A8%E7%90%86.html">讲义</a> / <a href="14_%E4%B8%89%E7%BB%B4%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%8E%A8%E7%90%86.html">页面</a></td>
+</tr>
+<tr>
+<td>15 世界模型</td>
+<td>RSSM 与 ELBO、想象训练、CEM / MPPI、视频与 JEPA 世界模型</td>
+<td><a href="15_%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B.html">讲义</a> / <a href="15_%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B.html">页面</a></td>
+</tr>
+<tr>
+<td>16 腿足与人形</td>
+<td>质心动力学、LIPM、ZMP、捕获点、WBC、RL 行走、动作重定向</td>
+<td><a href="16_%E8%85%BF%E8%B6%B3%E4%B8%8E%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA.html">讲义</a> / <a href="16_%E8%85%BF%E8%B6%B3%E4%B8%8E%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA.html">页面</a></td>
+</tr>
+<tr>
+<td>17 机器人基础模型</td>
+<td>数据采集与混合、ACT、流匹配动作头、FAST、通用策略与评测</td>
+<td><a href="17_%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%95%B0%E6%8D%AE.html">讲义</a> / <a href="17_%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%95%B0%E6%8D%AE.html">页面</a></td>
+</tr>
+<tr>
+<td>18 视频讲解</td>
+<td>12 个动画视频：参考系、卡尔曼、IK、BC、DP、导航、体渲染、PPO、捕获点、CEM、抓取、VLA</td>
+<td><a href="18_%E8%A7%86%E9%A2%91%E8%AE%B2%E8%A7%A3.html">讲义</a> / <a href="18_%E8%A7%86%E9%A2%91%E8%AE%B2%E8%A7%A3.html">页面</a></td>
+</tr>
 </tbody></table></div>
 <h2 id="阅读功能">阅读功能</h2>
 <ul>
@@ -83,6 +123,7 @@ npm run build
 npm test
 npm run check:browser
 </code></pre>
+<p>重新生成讲解视频需要 Python（edge-tts 语音合成、imageio-ffmpeg 编码）并联网，步骤见 <a href="18_%E8%A7%86%E9%A2%91%E8%AE%B2%E8%A7%A3.html">18 视频讲解</a> 末尾。</p>
 <p>Puppeteer 使用安装时提供的浏览器；Windows 也会识别常见的 Edge 安装路径。可通过 <code>PUPPETEER_EXECUTABLE_PATH</code> 指定已有 Chrome / Chromium / Edge。浏览器检查验证链接、离线加载、图示、手机布局和关键交互；它不代替推导的科学审阅。</p>
 <h2 id="文件结构">文件结构</h2>
 <div class="tablebox"><table>
@@ -106,7 +147,15 @@ npm run check:browser
 </tr>
 <tr>
 <td><code>scripts/</code></td>
-<td>跨平台构建与检查脚本</td>
+<td>跨平台构建、检查与视频生成脚本</td>
+</tr>
+<tr>
+<td><code>video/</code></td>
+<td>视频分镜（<code>lessons/*.js</code>）与 Canvas 动画引擎</td>
+</tr>
+<tr>
+<td><code>videos/</code></td>
+<td>生成的 MP4、SRT 字幕与封面</td>
 </tr>
 <tr>
 <td><code>third-party/</code></td>
